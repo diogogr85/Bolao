@@ -1,0 +1,137 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    def API_ENDPOINT = "API_ENDPOINT"
+    def APP_NAME = "APP_NAME"
+
+    defaultConfig {
+        applicationId "com.diogogr85.bolaotungao"
+        minSdkVersion 17
+        targetSdkVersion 27
+
+        def versionMajor = 1
+        def versionMinor = 0
+        def versionPatch = 8
+        versionCode versionMajor * 1000000 + versionMinor * 10000 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        setProperty("archivesBaseName", "bolao-tungao-$versionName")
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            applicationIdSuffix ".debug"
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        development {
+            applicationIdSuffix ".development"
+            resValue "string", APP_NAME, '"Bolão Dev"'
+            buildConfigField "String", API_ENDPOINT, '"https://script.google.com/macros/s/' +
+                    'AKfycbyzo8OHrhvt2KD7qaiqcFDKhYOeVfAM-dkZz70OVg/"'
+
+            dimension "default"
+        }
+        production {
+            resValue "string", APP_NAME, '"Bolão Tungão 2018"'
+            buildConfigField "String", API_ENDPOINT, '"https://script.google.com/macros/s/' +
+                    'AKfycbyzo8OHrhvt2KD7qaiqcFDKhYOeVfAM-dkZz70OVg/"'
+
+            dimension "default"
+        }
+    }
+
+    //Signing
+    File signFile = file('sign.properties')
+    if (signFile.exists()) {
+        Properties p = new Properties()
+        p.load(new FileInputStream(signFile))
+        signingConfigs {
+            release {
+                storeFile file(p.releaseKeyStorePath)
+                storePassword p.releaseKeyStorePassword
+                keyAlias p.releaseKeyAlias
+                keyPassword p.releaseKeyPassword
+            }
+        }
+
+        buildTypes.release.signingConfig signingConfigs.release
+
+    } else {
+        throw new GradleException("sign.properties file not found")
+    }
+
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    //Support
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.support_library_version"
+    implementation "com.android.support:design:$rootProject.ext.support_library_version"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayout_version"
+    implementation "com.android.support:cardview-v7:$rootProject.ext.support_library_version"
+
+    //Crashlytics
+    implementation "com.google.firebase:firebase-core:16.0.0"
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.3@aar') {
+        transitive = true;
+    }
+
+   //Tests
+    testImplementation "junit:junit:$rootProject.ext.jUnit_version"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.ext.runner_version"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espresso_core_Version"
+    testImplementation "org.mockito:mockito-all:$rootProject.ext.mockito_version"
+
+    //Utilitaries
+    implementation "com.google.code.gson:gson:$rootProject.ext.gson_version"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.converter_gson_version"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.ext.glide"
+    implementation "com.github.chrisbanes:PhotoView:$rootProject.ext.photo_view_version"
+    implementation "com.google.firebase:firebase-messaging:$rootProject.ext.firebase_messaging_version"
+
+
+    //Room
+    implementation "android.arch.persistence.room:runtime:$rootProject.ext.roomVersion"
+    implementation "android.arch.persistence.room:rxjava2:$rootProject.ext.roomVersion"
+    kapt "android.arch.persistence.room:compiler:$rootProject.ext.roomVersion"
+    implementation "com.google.firebase:firebase-storage:$rootProject.ext.firebase_storage_version"
+    implementation "com.firebaseui:firebase-ui-storage:$rootProject.ext.firebase_ui_storage_version"
+
+    //Network
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttp_version"
+
+    //RxJava - RxAndroid
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroid_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.adapter_rxjava2_version"
+
+}
+
+apply plugin: 'com.google.gms.google-services'

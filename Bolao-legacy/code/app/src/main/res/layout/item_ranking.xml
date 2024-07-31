@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <RelativeLayout
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/item_ranking_medal_shape"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_medal_shape"/>
+
+        <ImageView
+            android:id="@+id/item_ranking_medal_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_cup"/>
+
+        <ImageView
+            android:id="@+id/item_ranking_flashlight_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_flashlight"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/item_ranking_position_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryText"
+            android:textStyle="bold"
+            tools:text="#"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/item_ranking_player_name_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="16dp"
+        android:textColor="@color/colorPrimaryText"
+        tools:text="Apostador"/>
+
+    <TextView
+        android:id="@+id/item_ranking_points_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.2"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        tools:text="Pts"/>
+
+    <TextView
+        android:id="@+id/item_ranking_games_scored_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.2"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        tools:text="PE"/>
+
+    <TextView
+        android:id="@+id/item_ranking_half_games_scored_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.2"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        tools:text="PSE"/>
+
+    <TextView
+        android:id="@+id/item_ranking_winners_scored_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.2"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        tools:text="V"/>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">@string/APP_NAME</string>
+    <string name="toolbar_name">Copa Boi Tungão 2018</string>
+
+    <!-- Rules -->
+    <string name="rules_title">Regras</string>
+    <string name="rules_subtitle">O bolão do Boi Tungão terá o valor de R$ 30,00 que devem ser pagos 
+        até o dia 12 de Junho, data da entrega também da tabela preenchida.</string>
+    <string name="rules_content">
+        * Cada pessoa terá direito apenas a uma tabela para cada R$ 30,00\n
+        * O primeiro lugar do bolão irá embolsar 70% do valor arrecadado, o segundo 20% e o 3o 10%\n
+        * O pagamento pode ser feito diretamente com os organizadores Pedro Maia e Pedro França, ou na conta do BB abaixo
+    </string>
+    <string name="rules_account">Ag: 1838-4\nCC: 35015-X\nPedro Reynaldo Maia Vasconcelos</string>
+    <string name="rules_ponctuation_title">Regras de pontuação:</string>
+    <string name="rules_ponctuation_content">
+        - Acerto de placar exato (Vitória ou empate): <b>12 pontos</b>\n
+        - Acerto de vencedor do jogo e número de gols do time ganhador: <b>8 pontos</b>\n
+        - Acerto de empate sem acertar placar exato: <b>8 pontos</b>\n
+        - Acerto de vencedor do jogo sem acertar placar ou número de gols: <b>4 pontos</b>
+    </string>
+    <string name="rules_footnote">Todas as tabelas devem ser mandadas no prazo definido para o email
+        maia.prv@gmail.com com o nome do arquivo informando BOLÃO NOME DA PESSOA\n
+        EX: BOLÃO JOÃOZINHO DAS NEVES
+    </string>
+
+    <!-- License -->
+    <string name="license_title">THE BEER-WARE LICENSE" (Revision 42)</string>
+    <string name="license_content">
+        &lt;diogogr85@gmail.com&gt; wrote this file. As long as you retain this notice you can do whatever
+        you want with this stuff. If we meet some day, and you think this stuff is worth it, you can
+        buy me a beer in return.
+    </string>
+
+    <!-- BetsDb details -->
+    <string name="bets_details_title">Palpites</string>
+
+    <!-- Match bets -->
+    <string name="match_bets_title">Palpites do jogo</string>
+
+</resources>

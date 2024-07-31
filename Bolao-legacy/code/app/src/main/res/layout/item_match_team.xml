@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="110dp"
+    android:layout_height="78dp"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/item_match_team_flag_imageview"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/ic_flag_alemanha"/>
+
+    <TextView
+        android:id="@+id/item_match_team_name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/colorPrimaryText"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:maxLines="2"
+        tools:text="Arábia Saudita"/>
+
+</LinearLayout>

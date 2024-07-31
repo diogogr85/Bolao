@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:orientation="vertical"
+    android:layout_marginTop="16dp"
+    android:paddingTop="10dp"
+    android:background="@drawable/bg_bottom_border"
+    android:id="@+id/item_match_card">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/item_match_card_team_1_container"
+            layout="@layout/item_match_team"/>
+
+        <include
+            android:id="@+id/item_match_card_info_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            layout="@layout/item_match_info"/>
+
+        <include
+            android:id="@+id/item_match_card_team_2_container"
+            layout="@layout/item_match_team"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_match_card_venue_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="17dp"
+        tools:text="Olimpiyskiy stadion Luzhniki"/>
+
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@android:color/transparent">
+
+    <TextView
+        android:id="@+id/item_groups_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:textSize="16dp"
+        android:textColor="@color/colorPrimaryText"
+        tools:text="Grupo X"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.1"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        android:text="P"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.1"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        android:text="J"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.1"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        android:text="V"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.1"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        android:text="E"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.1"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        android:text="D"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:layout_width="27dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        android:text="GP"/>
+
+    <TextView
+        android:layout_width="27dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        android:text="GC"/>
+
+    <TextView
+        android:layout_width="27dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="@color/colorSecondaryText"
+        android:text="SG"
+        android:background="@android:color/transparent"/>
+
+</LinearLayout>

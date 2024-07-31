@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProgressBar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/progress_view"
+    android:layout_width="66dp"
+    android:layout_height="66dp"
+    android:layout_gravity="center"
+    android:layout_centerInParent="true"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:visibility="gone">
+
+</ProgressBar>
