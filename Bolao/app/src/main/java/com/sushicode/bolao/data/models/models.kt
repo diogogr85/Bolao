@@ -10,14 +10,16 @@ sealed class Result<out T> {
 
 @Serializable
 data class MatchResponse(
+    @SerialName("id")
+    val matchId: String? = null,
     @SerialName("team_home")
     val teamHome: String,
     @SerialName("team_guest")
     val teamGuest: String,
     @SerialName("team_home_score")
-    val teamHomeScore: Int?,
+    val teamHomeScore: Int? = null,
     @SerialName("team_guest_score")
-    val teamGuestScore: Int?,
+    val teamGuestScore: Int? = null,
     @SerialName("date")
     val date: String,
     @SerialName("venue")

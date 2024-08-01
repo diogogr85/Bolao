@@ -18,6 +18,8 @@ ktor = "2.3.12"
 coroutines = "1.3.9"
 koin = "3.4.0"
 mockK = "1.13.12"
+runtimeLivedata = "1.6.8"
+lifecycleRuntimeComposeAndroid = "2.8.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,15 +46,19 @@ ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref =
 ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
 ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
 ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-serialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-mock = { group = "io.ktor", name = "ktor-client-mock", version.ref = "ktor" }
 koin = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
 mockK-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockK" }
 mockK-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockK" }
+androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
+androidx-lifecycle-runtime-compose-android = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose-android", version.ref = "lifecycleRuntimeComposeAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
-kotlinx-json-plugin = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "json-plugin" }
+kotlinx-json = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "json-plugin" }

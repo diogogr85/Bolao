@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlinx.json)
 }
 
 android {
@@ -69,7 +70,11 @@ dependencies {
     implementation(libs.ktor.client.android)
     implementation(libs.ktor.client.cio)
     implementation(libs.ktor.client.logging)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.client.serialization)
     implementation(libs.ktor.mock)
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.androidx.lifecycle.runtime.compose.android)
     testImplementation(libs.ktor.mock)
     testImplementation(libs.junit)
     testImplementation(libs.junit.jupiter)

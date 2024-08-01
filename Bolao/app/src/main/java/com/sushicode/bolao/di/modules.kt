@@ -20,12 +20,8 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
-private const val BASE_URL = "base_url"
-
 val networkModules = module {
-//    single(named("mockEngineResponse")) { mockEngine }
-//    single { HttpClientBuilder(get(named("mockEngineResponse")), host = BASE_URL).build() }
-    single { HttpClientBuilder(host = BASE_URL).build() }
+    single { HttpClientBuilder() }
     factory<MatchesApi> { MatchesApiImpl(get()) }
 }
 
@@ -40,13 +36,4 @@ val useCaseModules = module {
 
 val presentationModules = module {
     viewModel<MatchesViewModel> { MatchesViewModel(get()) }
-}
-
-private const val jsonResponse = "{\"matches\":[{\"team_home\":\"Alemanha\",\"team_guest\":\"Brasil\",\"team_home_score\":8,\"team_guest_score\":1,\"date\":\"2024-08-07 09:00:00\",\"venue\":\"Estadio estadio\",\"group\":\"A\",\"round\":\"fase de groupo\"},{\"team_home\":\"Inglaterra\",\"team_guest\":\"França\",\"date\":\"2024-08-07 09:00:00\",\"venue\":\"Estadio estadio\",\"group\":\"B\",\"round\":\"fase de groupo\"},{\"team_home\":\"EUA\",\"team_guest\":\"Canadá\",\"team_home_score\":2,\"team_guest_score\":1,\"date\":\"2024-08-07 09:00:00\",\"venue\":\"Estadio estadio\",\"group\":\"D\",\"round\":\"fase de groupo\"}]}"
-private val mockEngine = MockEngine {
-    respond(
-        content = ByteReadChannel(jsonResponse),
-        status = HttpStatusCode.OK,
-        headers = headersOf(HttpHeaders.ContentType, ContentType.Application.Json.toString())
-    )
 }
