@@ -1,7 +1,7 @@
 package com.sushicode.bolao.domain.useCases
 
-import com.sushicode.bolao.domain.entities.CupMatch
+import com.sushicode.bolao.domain.entities.Match
 
 interface MatchesUseCase {
-    suspend fun getMatches(): List<CupMatch>
+    suspend fun getMatches(): List<Match>
 }

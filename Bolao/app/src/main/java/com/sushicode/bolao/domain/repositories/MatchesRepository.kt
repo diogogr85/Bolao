@@ -1,7 +1,7 @@
 package com.sushicode.bolao.domain.repositories
 
-import com.sushicode.bolao.domain.entities.CupMatch
+import com.sushicode.bolao.domain.entities.Match
 
 interface MatchesRepository {
-    suspend fun getMatches(): List<CupMatch>
+    suspend fun getMatches(): List<Match>
 }

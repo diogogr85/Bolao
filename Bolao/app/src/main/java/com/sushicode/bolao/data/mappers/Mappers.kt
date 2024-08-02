@@ -1,13 +1,13 @@
 package com.sushicode.bolao.data.mappers
 
-import com.sushicode.bolao.domain.entities.CupMatch
 import com.sushicode.bolao.data.models.MatchResponse
+import com.sushicode.bolao.domain.entities.Match
 
 
-object MatchesMapper: ResponseToEntityMapper<List<MatchResponse>, List<CupMatch>> {
-    override fun map(response: List<MatchResponse>): List<CupMatch> {
+object MatchesMapper: ResponseToEntityMapper<List<MatchResponse>, List<Match>> {
+    override fun map(response: List<MatchResponse>): List<Match> {
         return response.map {
-            CupMatch(
+            Match(
                 teamHome = it.teamHome,
                 teamGuest = it.teamGuest,
                 teamHomeScore = it.teamHomeScore,

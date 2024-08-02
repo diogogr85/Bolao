@@ -33,6 +33,12 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+//        lifecycleScope.launch {
+//            matchesViewModel.matchesStateFlow.collect { list ->
+//                if (list.isNotEmpty()) { }
+//            }
+//        }
     }
 
     override fun onStart() {
